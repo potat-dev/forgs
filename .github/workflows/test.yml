@@ -23,6 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      # Environment variables
+      - env:
+          VK_TOKEN: ${{ secrets.VK_TOKEN }}
+          GROUP_ID: ${{ secrets.GROUP_ID }}
+
       # Runs a single command using the runners shell
       - run: |
           pip install -r requirements.txt
